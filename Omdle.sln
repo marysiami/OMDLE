@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28922.388
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Omdle.Web", "Omdle.Web\Omdle.Web.csproj", "{E64B4EFE-B188-494F-AE67-DAC869AFBFB9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Omdle.Data", "Omdle.Data\Omdle.Data.csproj", "{D124C611-0F4C-417D-8B4C-0AA28D932FEF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Omdle.Account", "Omdle.Account\Omdle.Account.csproj", "{200F039E-CDB4-4680-9671-5F17C9334EC8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Omdle.Course", "Omdle.Course\Omdle.Course.csproj", "{F076C3E8-C51A-46A8-9F6E-360BB57869C5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Omdle.Common", "Omdle.Common\Omdle.Common.csproj", "{861C7EDB-5D4A-4D45-8E12-EC336E961441}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Omdle.Tests", "Omdle.Tests\Omdle.Tests.csproj", "{57741B2A-426D-412E-8549-EE0627485327}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Omdle.Chat", "Omdle.Chat\Omdle.Chat.csproj", "{D473766A-D21C-416B-9848-840261966F46}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E64B4EFE-B188-494F-AE67-DAC869AFBFB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E64B4EFE-B188-494F-AE67-DAC869AFBFB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E64B4EFE-B188-494F-AE67-DAC869AFBFB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E64B4EFE-B188-494F-AE67-DAC869AFBFB9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D124C611-0F4C-417D-8B4C-0AA28D932FEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D124C611-0F4C-417D-8B4C-0AA28D932FEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D124C611-0F4C-417D-8B4C-0AA28D932FEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D124C611-0F4C-417D-8B4C-0AA28D932FEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{200F039E-CDB4-4680-9671-5F17C9334EC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{200F039E-CDB4-4680-9671-5F17C9334EC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{200F039E-CDB4-4680-9671-5F17C9334EC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{200F039E-CDB4-4680-9671-5F17C9334EC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F076C3E8-C51A-46A8-9F6E-360BB57869C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F076C3E8-C51A-46A8-9F6E-360BB57869C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F076C3E8-C51A-46A8-9F6E-360BB57869C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F076C3E8-C51A-46A8-9F6E-360BB57869C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{861C7EDB-5D4A-4D45-8E12-EC336E961441}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{861C7EDB-5D4A-4D45-8E12-EC336E961441}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{861C7EDB-5D4A-4D45-8E12-EC336E961441}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{861C7EDB-5D4A-4D45-8E12-EC336E961441}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57741B2A-426D-412E-8549-EE0627485327}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57741B2A-426D-412E-8549-EE0627485327}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57741B2A-426D-412E-8549-EE0627485327}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57741B2A-426D-412E-8549-EE0627485327}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D473766A-D21C-416B-9848-840261966F46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D473766A-D21C-416B-9848-840261966F46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D473766A-D21C-416B-9848-840261966F46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D473766A-D21C-416B-9848-840261966F46}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {614E60A1-BFBA-42BC-A3E2-7EF23F5533F9}
+	EndGlobalSection
+EndGlobal

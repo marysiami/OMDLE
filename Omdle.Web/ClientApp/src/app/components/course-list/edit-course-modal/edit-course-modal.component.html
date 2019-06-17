@@ -1,0 +1,25 @@
+<h1 mat-dialog-title>Edytuj kurs</h1>
+<form [formGroup]="newPostForm" (ngSubmit)="submit()">
+  <div mat-dialog-content>
+    <mat-card-content>
+      <mat-form-field class="full-width">
+        <input id="pp-title"
+               type="text"
+               matInput placeholder="Tytuł kursu"
+               formControlName="title"
+               required>
+        <!--<mat-error *ngIf="newPostForm.hasError('required','title')">
+      Tytuł jest <strong>wymagany</strong>
+    </mat-error>-->
+      </mat-form-field>
+
+    </mat-card-content>
+  </div>
+  <div mat-dialog-actions align="right">
+    <mat-card-actions class="text-center">
+      <button mat-raised-button [mat-dialog-close]>Anuluj</button>
+      <button mat-raised-button color="primary" type="submit">Zapisz</button>
+      <small class="form-text text-danger text-center error-message">{{ message }}</small>
+    </mat-card-actions>
+  </div>
+</form>

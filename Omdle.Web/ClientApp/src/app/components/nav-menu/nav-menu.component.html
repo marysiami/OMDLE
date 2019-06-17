@@ -1,0 +1,10 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="">OMDLE </a>
+  <div class="navbar-nav ml-auto">
+    <a class="nav-item nav-link" href="">Home</a>
+    <span class="nav-item nav-link" *ngIf="authService.isLogged && !!authService.loggedName"  [routerLink]='["/profile"]'>{{authService.loggedName}}</span>
+    <a class="nav-item nav-link" *ngIf="authService.isLogged" [routerLink]="" (click)="logout()">Wyloguj się</a>
+    <a class="nav-item nav-link" *ngIf="!authService.isLogged" [routerLink]='["/login"]'>Zaloguj się</a>
+    <a class="nav-item nav-link" *ngIf="!authService.isLogged" [routerLink]='["/register"]'>Zarejestruj się</a>
+  </div>
+</nav>

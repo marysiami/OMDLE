@@ -1,0 +1,29 @@
+<div *ngIf="isLoggedIn">  
+  <h2>Nauczyciele</h2>
+  <div class="full-width container">
+    <mat-table #table [dataSource]="dataSource" matSort>
+      <ng-container matColumnDef="firstname">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>
+          Imię
+        </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.firstname}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="lastname">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Nazwisko</mat-header-cell>
+
+        <mat-cell *matCellDef="let element">{{element.lastname}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="email">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> E-mail</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.email}} </mat-cell>
+      </ng-container>
+      
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+    <mat-paginator [length]="userListing.totalCount"
+                   [pageSize]="pageSize"
+                   (page)="pageChanged($event)">
+    </mat-paginator>
+  </div>
+</div>

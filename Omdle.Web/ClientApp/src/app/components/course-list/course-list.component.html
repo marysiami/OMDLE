@@ -1,0 +1,48 @@
+<div *ngIf="authService.isLogged">
+  <div *ngIf="authService.checkRole('teacher')">
+    <button mat-raised-button color="primary" (click)="openCreateCourseModal()">Utwórz nowy kurs</button>
+  </div>
+  <h2>Wszystkie kursy</h2>
+  <div class="full-width container">
+    <mat-table #table [dataSource]="dataSource" matSort>
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>
+          Nazwa Kursu
+        </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <a [routerLink]='["/courselessons", element.id]'>{{element.title}}</a>
+        </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="address">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Autor kursu </mat-header-cell>
+
+        <mat-cell *matCellDef="let element">
+          <a [routerLink]='["/teacher", element.id]'>{{element.ownerName}} {{element.ownerSurname}}</a>
+        </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="repliesCount">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Ilość Lekcji w kursie</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.lessonsCount}} </mat-cell>
+      </ng-container>
+      
+      <ng-container matColumnDef="button">
+        <mat-header-cell *matHeaderCellDef></mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <div *ngIf="authService.checkRole('admin')">
+            <button mat-raised-button color="primary" (click)="deleteCourse(element.id)">usuń</button>
+            <button mat-raised-button color="primary" (click)="editCourse(element.id)">edytuj</button>
+          </div>
+          <div *ngIf="authService.checkRole('student')">
+            <button mat-raised-button color="primary" (click)="signIn(element.id)">zapisz się</button>
+          </div>
+        </mat-cell>
+      </ng-container>      
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+    <mat-paginator [length]="courseListing.totalCount"
+                   [pageSize]="pageSize"
+                   (page)="pageChanged($event)">
+    </mat-paginator>
+  </div>
+</div>

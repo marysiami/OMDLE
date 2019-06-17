@@ -1,0 +1,44 @@
+<h1>Twój profil</h1>  
+  
+<br />  
+<div>  
+  <div class="row">  
+    <div class="col-sm">  
+      <label for="firstName">Imię: </label>  
+    </div>  
+    <div id="firstName" class="col-sm">
+      {{ info.firstName }}
+    </div>  
+  </div>  
+  <br />  
+  <div class="row">  
+    <div class="col-sm">  
+      <label for="lastName">Nazwisko: </label>  
+    </div>  
+    <div id="lastName" class="col-sm">
+      {{ info.lastName }}
+    </div>  
+  </div>      
+  <br />
+  <div class="row">  
+    <div class="col-sm">  
+      <label>Email: </label>  
+    </div>  
+    <div class="col-sm">
+      {{ info.email }}
+    </div>  
+  </div>  
+  <br />  
+  
+  <div class="row">  
+    <div class="col-sm-3">  
+  
+    </div>  
+    <div class="col-sm-2" *ngIf="isLoggedIn">  
+      <button type="button" class="btn btn-primary">Edytuj</button>  
+    </div>  
+          
+    <div class="col-sm-3">  
+    </div>  
+  </div>  
+</div>  

@@ -1,0 +1,32 @@
+<div class="main">
+  <div id="title">Chat</div>
+  <div class="chatContainer">
+    <div class="card-body msg_card_body">
+      <div [className]="msg.ownerId==userId ? 'd-flex justify-content-end mb-4 msg_history' : 'd-flex justify-content-start mb-4 msg_history'"
+           *ngFor="let msg of messageHistory">
+        <div *ngIf="msg.ownerId!=userId" class="img_cont_msg">
+          <img src="https://i.pinimg.com/originals/56/97/bd/5697bdff5e13e03891633939c7030e2a.png" class="rounded-circle user_img_msg">
+        </div>
+        <div [className]="msg.ownerId==userId ? 'msg_container_end' : 'msg_container_start'">
+          {{msg.message}}
+          <span class="msg_time">{{msg.sendTime}}</span>
+        </div>
+        <div *ngIf="msg.ownerId==userId" class="img_cont_msg">
+          <img src="https://i.pinimg.com/originals/56/97/bd/5697bdff5e13e03891633939c7030e2a.png" class="rounded-circle user_img_msg">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <form class="form-inline" (ngSubmit)="sendMessage()">
+    <div class="container">
+      <div class="row">
+        <div style="width: 100%; padding-top: 10px;" class="clearfix">
+          <input type="text" type="text" id="messageInput" [(ngModel)]="chatMessage" name="message" class="form-control pull-left shadow" input-focus="content" />
+          <button id="sendMessage" mat-raised-button color="primary" type="submit">Wyślij</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+

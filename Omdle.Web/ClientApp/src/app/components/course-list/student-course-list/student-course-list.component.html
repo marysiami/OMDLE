@@ -1,0 +1,25 @@
+<div *ngIf="isLoggedIn">
+</div>
+<div class="full-width container">
+  <h2>Moje kursy</h2>
+  <mat-table #table [dataSource]="dataSource" matSort>
+    <ng-container matColumnDef="title">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>
+        Nazwa Kursu
+      </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <a [routerLink]='["/courselessons", element.id]'>{{element.title}}</a>
+      </mat-cell>
+    </ng-container>
+   
+    <ng-container matColumnDef="button">
+      <mat-header-cell *matHeaderCellDef></mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <button mat-raised-button color="primary" (click)="deleteCourse(element.id)">wypisz się</button>
+      </mat-cell>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+  
+</div>

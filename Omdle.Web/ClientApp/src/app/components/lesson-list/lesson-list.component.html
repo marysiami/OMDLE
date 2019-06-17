@@ -1,0 +1,24 @@
+<div *ngIf="authService.isLogged">
+  <div *ngIf="authService.checkRole('teacher')">
+    <button mat-raised-button color="primary" (click)="openCreateLessonModal()">Utwórz nową lekcję</button>
+  </div>
+  <h2>Lekcje</h2>
+  <div class="full-width container">
+    <mat-table #table [dataSource]="dataSource" matSort>
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>
+          Nazwa Lekcji
+        </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <a [routerLink]='["/lesson", element.id]'>{{element.title}}</a>
+        </mat-cell>
+      </ng-container>
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+    <mat-paginator [length]="lessonListing.totalCount"
+                    [pageSize]="pageSize"
+                    (page)="pageChanged($event)">
+    </mat-paginator>
+  </div>
+  </div>

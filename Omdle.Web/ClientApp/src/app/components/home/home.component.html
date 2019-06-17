@@ -1,0 +1,26 @@
+<div *ngIf="authService.isLogged">
+  <div *ngIf="admin">
+    <h2>Panel Administratora</h2>
+    <button mat-raised-button color="primary" (click)="openAllCourses()">Kursy</button>
+    <button mat-raised-button color="primary" (click)="openUsers()">Użytkownicy</button>
+    <button mat-raised-button color="primary" (click)="openStudents()">Studenci</button>
+    <button mat-raised-button color="primary" (click)="openTeachers()">Nauczyciele</button>
+    <button mat-raised-button color="primary" (click)="openForum()">Forum</button>
+
+  </div>
+  <div *ngIf="student">
+    <h2>Panel Studenta</h2>
+    <button mat-raised-button color="primary" (click)="openAllCourses()">Wszystkie kursy</button>
+    <button mat-raised-button color="primary" (click)="openStudentCourses()">Moje kursy</button>
+    <button mat-raised-button color="primary">Moje przypomnienia</button>
+    <button mat-raised-button color="primary" (click)="openForum()">Forum</button>
+
+  </div>
+  <div *ngIf="teacher">
+    <h2>Panel Nauczyciela</h2>
+    <button mat-raised-button color="primary" (click)="openAllCourses()">Wszystkie kursy</button>
+    <button mat-raised-button color="primary" (click)="openTeacherCourses()">Moje kursy</button>
+    <button mat-raised-button color="primary" (click)="openForum()">Forum</button>
+  </div>
+  <app-chat></app-chat>
+</div>
